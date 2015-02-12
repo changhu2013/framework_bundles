@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<!-- 获取认证服务 -->
+	<reference id="refRSAuth" interface="com.riambsoft.core.auth.RSAuth"
+		timeout="30000" />
+
+	<!-- 获取应用程序DAO服务 -->
+	<reference id="refRsAppDao" interface="com.riambsoft.core.dao.RsAppDao"
+		timeout="30000" />
+
+	<!-- 发布登录服务 -->
+	<bean class="com.riambsoft.core.web.RSService" init-method="init"
+		destroy-method="destroy">
+		<argument>
+			<bean class="com.riambsoft.home.service.impl.LoginImpl">
+				<argument ref="refRSAuth" />
+				<argument ref="refRsAppDao" />
+			</bean>
+		</argument>
+	</bean>
+
+</blueprint>
+

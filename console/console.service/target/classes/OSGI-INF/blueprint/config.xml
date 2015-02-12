@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<bean class="com.riambsoft.core.web.RSService" init-method="init"
+		destroy-method="destroy">
+		<argument>
+			<bean class="com.riambsoft.console.service.impl.DefaultBundleService">
+				<argument ref="blueprintBundleContext" />
+			</bean>
+		</argument>
+	</bean>
+
+	<bean class="com.riambsoft.core.webservice.SOAPService"
+		init-method="init" destroy-method="destroy">
+		<argument>
+			<bean class="com.riambsoft.console.service.impl.DefaultBundleService">
+				<argument ref="blueprintBundleContext" />
+			</bean>
+		</argument>
+	</bean>
+
+</blueprint>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+
+	<bean id="stateDataSourceConfig" class="com.riambsoft.state.core.StateDataSourceConfig"
+		factory-method="getInstance">
+	</bean>
+
+	<bean id="stateDataSource" class="com.riambsoft.core.datasource.RSDataSource">
+		<argument ref="stateDataSourceConfig" />
+	</bean>
+
+	<service interface="com.riambsoft.state.core.StateDao">
+		<bean class="com.riambsoft.state.core.impl.StateDaoImpl">
+			<property name="dataSource" ref="stateDataSource" />
+		</bean>
+	</service>
+
+</blueprint>

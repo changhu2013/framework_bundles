@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<!-- 获取State DAO -->
+	<reference id="stateDao" interface="com.riambsoft.state.core.StateDao"
+		timeout="30000" />
+
+	<!-- 发布用户管理服务 -->
+	<bean class="com.riambsoft.core.web.RSService" init-method="init"
+		destroy-method="destroy">
+		<argument>
+			<bean class="com.riambsoft.state.service.impl.StateServiceImpl">
+				<argument ref="stateDao" />
+			</bean>
+		</argument>
+	</bean>
+
+</blueprint>

@@ -1,0 +1,6 @@
+com\riambsoft\base\service\StateService.class
+com\riambsoft\base\service\WebAppManager.class
+com\riambsoft\base\service\impl\UserManagerImpl.class
+com\riambsoft\base\service\impl\StateServiceImpl.class
+com\riambsoft\base\service\UserManager.class
+com\riambsoft\base\service\RoleManager.class

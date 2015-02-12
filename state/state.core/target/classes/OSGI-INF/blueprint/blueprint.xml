@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<bean class="com.riambsoft.state.core.StateDataSourceConfig"
+		init-method="init" destroy-method="destroy" factory-method="getInstance">
+		<property name="url" value="jdbc:oracle:thin:@192.168.168.10:1521:zlora" />
+		<property name="username" value="dev9i" />
+		<property name="password" value="pass" />
+	</bean>
+
+</blueprint>
+
